@@ -18,6 +18,7 @@ var_dump($collection);
     <meta charset="UTF-8">
     <link href="stylesheets/normalise.css" rel="stylesheet" type="text/css">
     <link href="stylesheets/stylesheet.css" rel="stylesheet" type="text/css">
+    <title>Fish Finder</title>
 </head>
 <body>
 <h1>Is everything working?</h1>
