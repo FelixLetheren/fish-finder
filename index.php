@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 
 $db = new PDO('mysql:host=192.168.20.20; dbname=fish-finder', 'root', '');
@@ -12,3 +13,13 @@ $collection = $sql->fetchAll();
 
 var_dump($collection);
 ?>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="stylesheets/normalise.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/stylesheet.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1>Is everything working?</h1>
+</body>
+</html>
