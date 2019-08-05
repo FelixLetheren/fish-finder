@@ -7,7 +7,7 @@
 #
 # Host: 192.168.20.20 (MySQL 5.6.44)
 # Database: fish-finder
-# Generation Time: 2019-08-05 10:49:04 +0000
+# Generation Time: 2019-08-05 12:07:31 +0000
 # ************************************************************
 
 
@@ -31,17 +31,18 @@ CREATE TABLE `fish` (
   `species` varchar(255) NOT NULL DEFAULT '',
   `img-filepath` varchar(255) DEFAULT '',
   `length` int(11) unsigned NOT NULL,
-  `agression` enum('1','2','3','4','5') NOT NULL,
+  `aggression` enum('1','2','3','4','5') NOT NULL DEFAULT '1',
   `color` varchar(255) NOT NULL DEFAULT '',
+  `pattern` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 LOCK TABLES `fish` WRITE;
 /*!40000 ALTER TABLE `fish` DISABLE KEYS */;
 
-INSERT INTO `fish` (`id`, `name`, `species`, `img-filepath`, `length`, `agression`, `color`)
+INSERT INTO `fish` (`id`, `name`, `species`, `img-filepath`, `length`, `aggression`, `color`, `pattern`)
 VALUES
-	(2,'Grondle the Great','goldfish','/project/images/hot-grondle-pics.png',160,'5','Purple');
+	(1,'Grondle the Great','Goldfish','/project/images/grondle.png',0,'1','Purple','spotty');
 
 /*!40000 ALTER TABLE `fish` ENABLE KEYS */;
 UNLOCK TABLES;
