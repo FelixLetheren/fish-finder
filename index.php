@@ -10,25 +10,36 @@ $sql = $db->prepare('SELECT `fish`.`name`,`fish`.`species`,`fish`.`img-filepath`
 $sql->execute();
 
 $collection = $sql->fetchAll();
-function makePage($collection)
+/**
+ * @param array $collection
+ * Takes all re
+ */
+//function makePage(array $collection)
+//{
+//    echo '<div class="row-container">';
+//    foreach ($collection as $fish) {
+//        makeCard($fish);
+//    }
+//    echo '</div>';
+//}
+
+function displayFish(array $fishFromDB)
 {
-    echo '<div class="row-container">';
-    foreach($collection as $fish){
-            makeCard($fish);
+    $result = '';
+    foreach ($fishFromDB as $fish) {
+        $result .= '<div class="fish-card">';
+        $result .= '<h2 class="name">' . $fish['name'] . '</h2>';
+        $result .= '<h3 class="stat">' . $fish['species'] . '</h3>';
+        $result .= '<img alt="fish picture" class="fish-picture" src="' . $fish['img-filepath'] . '">';
+        $result .= '<h3 class="stat"> Length- ' . $fish['length'] . '</h3>';
+        $result .= '<h3 class="stat"> Aggression- ' . $fish['aggression'] . '</h3>';
+        $result .= '<h3 class="stat"> Colour- ' . $fish['color'] . '</h3>';
+        $result .= '<h3 class="stat"> Pattern- ' . $fish['pattern'] . '</h3>';
+        $result .= '</div>';
     }
-    echo '</div>';
+    return $result;
 }
-function makeCard($fish){
-        echo '<div class="fish-card">';
-        echo '<h2 class="name">' . $fish['name'] . '</h2>';
-        echo '<h3 class="stat">' . $fish['species'] . '</h3>';
-        echo '<img alt="fish picture" class="fish-picture" src="' . $fish['img-filepath'] . '">';
-        echo '<h3 class="stat"> Length- ' . $fish['length'] . '</h3>';
-        echo '<h3 class="stat"> Aggression- ' . $fish['aggression'] . '</h3>';
-        echo '<h3 class="stat"> Colour- ' . $fish['color'] . '</h3>';
-        echo '<h3 class="stat"> Pattern- ' . $fish['pattern'] . '</h3>';
-        echo '</div>';
-}
+
 ?>
 <html lang="en">
 <head>
@@ -42,6 +53,8 @@ function makeCard($fish){
 <div class="title-container">
     <h1>Fish Finder</h1>
 </div>
-    <?php makePage($collection);?>
+<div class="container">
+<?php echo displayFish($collection); ?>
+</div>
 </body>
 </html>
