@@ -25,7 +25,7 @@ function makeCard($fish){
         echo '<img alt="fish picture" class="fish-picture" src="' . $fish['img-filepath'] . '">';
         echo '<h3 class="stat"> Length- ' . $fish['length'] . '</h3>';
         echo '<h3 class="stat"> Aggression- ' . $fish['aggression'] . '</h3>';
-        echo '<h3 class="stat"> Colour- ' . $fish['colour'] . '</h3>';
+        echo '<h3 class="stat"> Colour- ' . $fish['color'] . '</h3>';
         echo '<h3 class="stat"> Pattern- ' . $fish['pattern'] . '</h3>';
         echo '</div>';
 }
