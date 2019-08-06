@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <?php
+/**
+ * @return PDO
+ * Connects to database
+ */
 function databaseConnect(){
     $db = new PDO('mysql:host=192.168.20.20; dbname=fish-finder', 'root', '');
     return $db;
 }
+
+/**
+ * @param $db
+ * @return array
+ * Queries the database to get multidimensional array of all data required to display.
+ */
 function getFish($db):array
 {
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -12,6 +22,13 @@ function getFish($db):array
     $collection = $sql->fetchAll();
     return $collection;
 }
+
+/**
+ * @param array $fishFromDB
+ * @return string
+ * Iterates through each associated array and concatenates all the information into one large string
+ * of HTML
+ */
 function displayFish(array $fishFromDB)
 {
     $result = '';
@@ -44,7 +61,22 @@ $collection = getFish($db);
     <h1>Fish Finder</h1>
 </div>
 <div class="container">
-<?php echo displayFish($collection); ?>
+<?php echo displayFish($collection);
+$exampleFish = [
+    ['name' => 'Borris',
+        'species' => 'shark',
+        'img-filepath' => 'images/borris.png',
+        'length' => 7,
+        'aggression' => 2,
+        'color' => 'Blue',
+        'pattern' => 'Spotty'],['name'=>'Borris',
+    'species' => 'shark',
+    'img-filepath' => 'images/borris.png',
+    'length' => 7,
+    'aggression' => 2,
+    'color' => 'Blue',
+    'pattern' => 'Spotty']];
+echo displayFish($exampleFish) ?>
 </div>
 </body>
 </html>
