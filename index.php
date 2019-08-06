@@ -1,28 +1,17 @@
 <!DOCTYPE html>
 <?php
-
-$db = new PDO('mysql:host=192.168.20.20; dbname=fish-finder', 'root', '');
-
-$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-
-$sql = $db->prepare('SELECT `fish`.`name`,`fish`.`species`,`fish`.`img-filepath`,`fish`.`length`,`fish`.`aggression`,`fish`.`color`,`fish`.`pattern` FROM `fish`;');
-
-$sql->execute();
-
-$collection = $sql->fetchAll();
-/**
- * @param array $collection
- * Takes all re
- */
-//function makePage(array $collection)
-//{
-//    echo '<div class="row-container">';
-//    foreach ($collection as $fish) {
-//        makeCard($fish);
-//    }
-//    echo '</div>';
-//}
-
+function databaseConnect(){
+    $db = new PDO('mysql:host=192.168.20.20; dbname=fish-finder', 'root', '');
+    return $db;
+}
+function getFish($db):array
+{
+    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    $sql = $db->prepare('SELECT `fish`.`name`,`fish`.`species`,`fish`.`img-filepath`,`fish`.`length`,`fish`.`aggression`,`fish`.`color`,`fish`.`pattern` FROM `fish`;');
+    $sql->execute();
+    $collection = $sql->fetchAll();
+    return $collection;
+}
 function displayFish(array $fishFromDB)
 {
     $result = '';
@@ -31,7 +20,7 @@ function displayFish(array $fishFromDB)
         $result .= '<h2 class="name">' . $fish['name'] . '</h2>';
         $result .= '<h3 class="stat">' . $fish['species'] . '</h3>';
         $result .= '<img alt="fish picture" class="fish-picture" src="' . $fish['img-filepath'] . '">';
-        $result .= '<h3 class="stat"> Length- ' . $fish['length'] . '</h3>';
+        $result .= '<h3 class="stat"> Length- ' . $fish['length'] . 'cm</h3>';
         $result .= '<h3 class="stat"> Aggression- ' . $fish['aggression'] . '</h3>';
         $result .= '<h3 class="stat"> Colour- ' . $fish['color'] . '</h3>';
         $result .= '<h3 class="stat"> Pattern- ' . $fish['pattern'] . '</h3>';
@@ -39,7 +28,8 @@ function displayFish(array $fishFromDB)
     }
     return $result;
 }
-
+$db = databaseConnect();
+$collection = getFish($db);
 ?>
 <html lang="en">
 <head>
