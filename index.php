@@ -10,9 +10,15 @@ $sql = $db->prepare('SELECT `fish`.`name`,`fish`.`species`,`fish`.`img-filepath`
 $sql->execute();
 
 $collection = $sql->fetchAll();
-
+function makePage($collection)
+{
+    echo '<div class="row-container">';
+    foreach($collection as $fish){
+            makeCard($fish);
+    }
+    echo '</div>';
+}
 function makeCard($fish){
-    foreach( $fish as $fish) {
         echo '<div class="fish-card">';
         echo '<h2 class="name">' . $fish['name'] . '</h2>';
         echo '<h3 class="stat">' . $fish['species'] . '</h3>';
@@ -22,7 +28,6 @@ function makeCard($fish){
         echo '<h3 class="stat"> Colour- ' . $fish['colour'] . '</h3>';
         echo '<h3 class="stat"> Pattern- ' . $fish['pattern'] . '</h3>';
         echo '</div>';
-    }
 }
 ?>
 <html lang="en">
@@ -37,9 +42,6 @@ function makeCard($fish){
 <div class="title-container">
     <h1>Fish Finder</h1>
 </div>
-<div class="row-container">
-    <?php makeCard($collection);?>
-</div>
-</div>
+    <?php makePage($collection);?>
 </body>
 </html>

@@ -28,6 +28,9 @@ font-size: 2rem;
 .row-container{
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 70%;
+    margin:0 auto;
 }
 .fish-picture{
     width: 300px;
