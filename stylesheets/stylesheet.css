@@ -2,3 +2,20 @@
     font-size: 62.5%;
     box-sizing: border-box;
 }
+h1{
+    font-size: 4rem;
+}
+p{
+    font-size: 2rem;
+}
+h2{
+    font-size: 2rem;
+}
+.row-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+.fish-picture{
+    width: 300px;
+    height: 300px;
+}
