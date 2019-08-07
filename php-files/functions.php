@@ -49,7 +49,7 @@ function displayFish(array $fishFromDB):string
                 </h3><h3 class="stat"> Pattern- ' . $fish['pattern'] . '
                 </h3></div>';
         } else {
-            return 'Error! please contact administrator';}
+            return 'Error! Please contact administrator';}
     }
     return $result;
 }
