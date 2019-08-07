@@ -7,7 +7,7 @@
 #
 # Host: 192.168.20.20 (MySQL 5.6.44)
 # Database: fish-finder
-# Generation Time: 2019-08-05 12:07:31 +0000
+# Generation Time: 2019-08-07 09:31:09 +0000
 # ************************************************************
 
 
@@ -33,7 +33,7 @@ CREATE TABLE `fish` (
   `length` int(11) unsigned NOT NULL,
   `aggression` enum('1','2','3','4','5') NOT NULL DEFAULT '1',
   `color` varchar(255) NOT NULL DEFAULT '',
-  `pattern` varchar(255) DEFAULT '',
+  `pattern` varchar(255) DEFAULT 'none',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -42,7 +42,15 @@ LOCK TABLES `fish` WRITE;
 
 INSERT INTO `fish` (`id`, `name`, `species`, `img-filepath`, `length`, `aggression`, `color`, `pattern`)
 VALUES
-	(1,'Grondle the Great','Goldfish','/project/images/grondle.png',0,'1','Purple','spotty');
+	(1,'Grondel','Veiltail Goldfish','images/grondel.png',20,'1','Gold and White','Bi-coloured'),
+	(2,'Timothy','Siamese Fighting Fish','images/timothy.png',10,'5','Red and Blue','Bi-coloured'),
+	(3,'Arnold','Leopard Pleco','images/arnold.png',61,'2','Black and Yellow','Spotted'),
+	(4,'Oscar','Oscar','images/oscar.png',30,'5','Black and Red','Speckled'),
+	(5,'Susan','Asian Arowana','images/susan.png',90,'5','Orange','Bi-coloured'),
+	(6,'Fishly','Dwarf Puffer Fish','images/hugo.png',2,'5','Yellow and Black','Spotted'),
+	(7,'Wishly','Goshiki Koi','images/weeply.png',60,'2','Red and White','Patched'),
+	(8,'Harold','Dwarf Gourami','images/harold.png',8,'3','Red and Blue','Speckled'),
+	(9,'Lucifer','Axolotl','images/lucifer.png',21,'2','White','Albino');
 
 /*!40000 ALTER TABLE `fish` ENABLE KEYS */;
 UNLOCK TABLES;
