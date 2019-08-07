@@ -28,7 +28,7 @@ class Indextest extends TestCase
             ];
 
         $expectedResult =
-            '<div class="fish-card"><h2 class="name">Borris</h2><h3 class="stat">shark</h3><img alt="fish picture" class="fish-picture" src="images/borris.png"><h3 class="stat"> Length- 7cm</h3><h3 class="stat"> Aggression- 2</h3><h3 class="stat"> Colour- Blue</h3><h3 class="stat"> Pattern- Spotty</h3></div><div class="fish-card"><h2 class="name">Borris</h2><h3 class="stat">shark</h3><img alt="fish picture" class="fish-picture" src="images/borris.png"><h3 class="stat"> Length- 7cm</h3><h3 class="stat"> Aggression- 2</h3><h3 class="stat"> Colour- Blue</h3><h3 class="stat"> Pattern- Spotty</h3></div>';
+            '<div class="fish-card"><h2 class="name">Borris</h2><h3 class="stat">shark</h3><img alt="fish picture" class="fish-picture" src="images/borris.png"><h3 class="stat"> Length-  7cm</h3><h3 class="stat"> Aggression- 2</h3><h3 class="stat"> Colour- Blue</h3><h3 class="stat"> Pattern- Spotty</h3></div><div class="fish-card"><h2 class="name">Borris</h2><h3 class="stat">shark</h3><img alt="fish picture" class="fish-picture" src="images/borris.png"><h3 class="stat"> Length-  7cm</h3><h3 class="stat"> Aggression- 2</h3><h3 class="stat"> Colour- Blue</h3><h3 class="stat"> Pattern- Spotty</h3></div>';
 
         $this->assertEquals(displayFish($exampleFish), $expectedResult);
     }
