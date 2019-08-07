@@ -1,9 +1,9 @@
 * {
-    font-size: 62.5%;
     box-sizing: border-box;
 }
 
 body {
+    font-size: 62.5%;
     background-color: #0B132B;
     font-family: 'Raleway', sans-serif;
     color: #5BC0BE;
@@ -16,11 +16,11 @@ h1 {
 }
 
 h2 {
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 h3 {
-    font-size: 2rem;
+    font-size: 1.3rem;
 }
 
 p {
