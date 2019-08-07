@@ -7,7 +7,7 @@
 #
 # Host: 192.168.20.20 (MySQL 5.6.44)
 # Database: fish-finder
-# Generation Time: 2019-08-07 09:31:09 +0000
+# Generation Time: 2019-08-07 13:31:35 +0000
 # ************************************************************
 
 
@@ -47,8 +47,8 @@ VALUES
 	(3,'Arnold','Leopard Pleco','images/arnold.png',61,'2','Black and Yellow','Spotted'),
 	(4,'Oscar','Oscar','images/oscar.png',30,'5','Black and Red','Speckled'),
 	(5,'Susan','Asian Arowana','images/susan.png',90,'5','Orange','Bi-coloured'),
-	(6,'Fishly','Dwarf Puffer Fish','images/hugo.png',2,'5','Yellow and Black','Spotted'),
-	(7,'Wishly','Goshiki Koi','images/weeply.png',60,'2','Red and White','Patched'),
+	(6,'Fishly','Dwarf Puffer Fish','images/fishly.png',2,'5','Yellow and Black','Spotted'),
+	(7,'Wishly','Goshiki Koi','images/wishly.png',60,'2','Red and White','Patched'),
 	(8,'Harold','Dwarf Gourami','images/harold.png',8,'3','Red and Blue','Speckled'),
 	(9,'Lucifer','Axolotl','images/lucifer.png',21,'2','White','Albino');
 
