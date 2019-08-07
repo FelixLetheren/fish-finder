@@ -7,7 +7,7 @@
 #
 # Host: 192.168.20.20 (MySQL 5.6.44)
 # Database: fish-finder
-# Generation Time: 2019-08-07 13:31:35 +0000
+# Generation Time: 2019-08-07 15:36:51 +0000
 # ************************************************************
 
 
@@ -50,7 +50,7 @@ VALUES
 	(6,'Fishly','Dwarf Puffer Fish','images/fishly.png',2,'5','Yellow and Black','Spotted'),
 	(7,'Wishly','Goshiki Koi','images/wishly.png',60,'2','Red and White','Patched'),
 	(8,'Harold','Dwarf Gourami','images/harold.png',8,'3','Red and Blue','Speckled'),
-	(9,'Lucifer','Axolotl','images/lucifer.png',21,'2','White','Albino');
+	(9,'Lucifer','Axolotl','images/lucifer.png',21,'2','White','Leucistic');
 
 /*!40000 ALTER TABLE `fish` ENABLE KEYS */;
 UNLOCK TABLES;
