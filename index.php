@@ -1,10 +1,10 @@
-<!DOCTYPE html>
 <?php
 require_once 'php-files/functions.php';
 
 $db = databaseConnect();
 $collection = getFish($db);
 ?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
