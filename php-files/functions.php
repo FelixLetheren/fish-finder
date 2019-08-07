@@ -37,16 +37,17 @@ function displayFish(array $fishFromDB):string
             && isset($fish['species'])
             && isset($fish['length'])
             && isset($fish['aggression'])
-            && isset($fish['color'])) {
-            $result .= '<div class="fish-card">';
-            $result .= '<h2 class="name">' . $fish['name'] . '</h2>';
-            $result .= '<h3 class="stat">' . $fish['species'] . '</h3>';
-            $result .= '<img alt="fish picture" class="fish-picture" src="' . $fish['img-filepath'] . '">';
-            $result .= '<h3 class="stat"> Length- ' . $fish['length'] . 'cm</h3>';
-            $result .= '<h3 class="stat"> Aggression- ' . $fish['aggression'] . '</h3>';
-            $result .= '<h3 class="stat"> Colour- ' . $fish['color'] . '</h3>';
-            $result .= '<h3 class="stat"> Pattern- ' . $fish['pattern'] . '</h3>';
-            $result .= '</div>';
+            && isset($fish['color'])
+        ) {
+            $result .=
+                '<div class="fish-card"><h2 class="name">' . $fish['name'] .
+                '</h2><h3 class="stat">' . $fish['species'] .
+                '</h3><img alt="fish picture" class="fish-picture" src="' . $fish['img-filepath'] . '
+                "><h3 class="stat"> Length-  ' . $fish['length'] . '
+                cm</h3><h3 class="stat"> Aggression- ' . $fish['aggression'] . '
+                </h3><h3 class="stat"> Colour- ' . $fish['color'] . '
+                </h3><h3 class="stat"> Pattern- ' . $fish['pattern'] . '
+                </h3></div>';
         } else {
             return 'Error! please contact administrator';}
     }
