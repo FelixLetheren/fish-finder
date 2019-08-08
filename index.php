@@ -3,7 +3,7 @@ require_once 'php-files/functions.php';
 
 $db = databaseConnect();
 $collection = getFish($db);
-$loadedPage = displayFish($collection);
+$fishDataHtml = displayFish($collection);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +19,7 @@ $loadedPage = displayFish($collection);
     <h1>Fish Finder</h1>
 </div>
 <div class="container">
-    <?php echo $loadedPage; ?>
+    <?php echo $fishDataHtml; ?>
 </div>
 </body>
 </html>
