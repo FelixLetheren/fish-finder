@@ -63,38 +63,38 @@ class FunctionsTest extends TestCase
 
     public function testDisplayFish_throwsTypeErrorWithWrongInputType()
     {
-        $examplefish = 23;
+        $exampleFish = 23;
 
         $this->expectException(TypeError::class);
 
-        displayFish($examplefish);
+        displayFish($exampleFish);
     }
 
     public function testInputConfirmation_returnsSuccessMessageOnTrue()
     {
 
-        $expectedresult = '<h2 class="success">Success! Fish has been inserted into collection</h2>';
+        $expectedResult = '<h2 class="success">Success! Fish has been inserted into collection</h2>';
 
         $result = inputConfirmation(true);
 
-        $this->assertEquals($expectedresult, $result);
+        $this->assertEquals($expectedResult, $result);
     }
     public function testInputConfirmation_returnsFailureMessageOnFalse()
     {
 
-        $expectedresult = '<h2 class="failure">Oops! You\'ve made and error. Please check you\`ve correctly filled all fields!</h2>';
+        $expectedResult = '<h2 class="failure">Oops! You\'ve made and error. Please check you\`ve correctly filled all fields!</h2>';
 
         $result = inputConfirmation(false);
 
-        $this->assertEquals($expectedresult, $result);
+        $this->assertEquals($expectedResult, $result);
     }
     public function testInputConfirmation_throwsTypeErrorWithWrongInputType()
     {
 
-        $exampledata = 23;
+        $exampleData = 23;
 
         $this->expectException(TypeError::class);
 
-        displayFish($exampledata);
+        displayFish($exampleData);
     }
 }
