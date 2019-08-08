@@ -2,7 +2,14 @@
 require_once 'php-files/functions.php';
 
 $db = databaseConnect();
-if(isset($_POST['name'])){
+if (
+    isset($_POST['name']) &&
+    isset($_POST['species']) &&
+    isset($_POST['length']) &&
+    isset($_POST['aggression']) &&
+    isset($_POST['color']) &&
+    isset($_POST['pattern'])
+) {
     insertEntryIntoDB($db,$_POST);
 }
 ?>
@@ -23,7 +30,7 @@ if(isset($_POST['name'])){
     <form method="post" action="newFish.php">
         <input type="text" placeholder="Name" name="name" required>
         <input type="text" placeholder="Species" name="species" required>
-        <input type="number" placeholder="Length" name="length" required>
+        <input type="number" placeholder="Length(cm)" name="length" required>
         Aggression:
         <select name="aggression" required>
             <option label="Please select"></option>
