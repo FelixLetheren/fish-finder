@@ -94,6 +94,6 @@ function inputConfirmation(bool $dataEntryResult): string{
     if ($dataEntryResult) {
         return '<h2 class="success">Success! Fish has been inserted into collection</h2>';
     } else {
-        return '<h2 class="failure">Oops! You\'ve made and error. Please check you\`ve correctly filled all fields!</h2>';
+        return '<h2 class="failure">Oops! You\'ve made and error. Please check you\'ve correctly filled all fields!</h2>';
     }
 }
