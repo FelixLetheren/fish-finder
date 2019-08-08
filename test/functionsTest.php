@@ -3,7 +3,7 @@ require '../php-files/functions.php';
 
 use PHPUnit\Framework\TestCase;
 
-class Indextest extends TestCase
+class FunctionsTest extends TestCase
 {
     public function testDisplayFish_correctlyMakesCard()
     {
