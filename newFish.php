@@ -10,7 +10,7 @@ if (
     && isset($_POST['color'])
     && isset($_POST['pattern'])
 ) {
-    insertEntryIntoDB($db,$_POST);
+   $message =inputConfirmation(insertEntryIntoDB($db,$_POST));
 }
 ?>
 <!DOCTYPE html>
@@ -49,6 +49,9 @@ if (
     <a class="new-fish-icon" href="index.php">
         <img src="images/return.png" alt="Return to Collection">
     </a>
+</div>
+<div class="content-container">
+    <?php if(isset($_POST)) echo $message;?>
 </div>
 </body>
 </html>
