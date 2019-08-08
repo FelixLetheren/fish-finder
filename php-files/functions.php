@@ -46,13 +46,13 @@ function displayFish(array $fishFromDB):string
                 . $fish['species']
                 . '</h3><img alt="fish picture" class="fish-picture" src="'
                 . $fish['img-filepath']
-                . '"><h3 class="stat"> Length-  '
+                . '"><h3 class="stat"> Length:  '
                 . $fish['length']
-                . 'cm</h3><h3 class="stat"> Aggression- '
+                . 'cm</h3><h3 class="stat"> Aggression: '
                 . $fish['aggression']
-                . '</h3><h3 class="stat"> Colour- '
+                . '</h3><h3 class="stat"> Colour: '
                 . $fish['color']
-                . '</h3><h3 class="stat"> Pattern- '
+                . '</h3><h3 class="stat"> Pattern: '
                 . $fish['pattern']
                 . '</h3></div>';
         } else {
