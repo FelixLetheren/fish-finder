@@ -31,7 +31,7 @@ if (
         <input type="text" placeholder="Name" name="name" required>
         <input type="text" placeholder="Species" name="species" required>
         <input type="number" placeholder="Length(cm)" name="length" required>
-        <h2>Aggression:</h2>
+        <h3>Aggression:</h3>
         <select name="aggression" required>
             <option label="Please select"></option>
             <option value="1">1</option>
