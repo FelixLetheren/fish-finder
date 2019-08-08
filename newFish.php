@@ -32,7 +32,7 @@ require_once 'php-files/functions.php'
 </div>
 <div class="link-container">
     <a class="new-fish-icon" href="index.php">
-        <img src="images/return.png" alt="Add a new fish"
+        <img src="images/return.png" alt="Return to Collection"
     </a>
 </body>
 </html>
