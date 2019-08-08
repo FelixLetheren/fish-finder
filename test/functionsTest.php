@@ -16,7 +16,8 @@ class FunctionsTest extends TestCase
                     'length' => 7,
                     'aggression' => 2,
                     'color' => 'Blue',
-                    'pattern' => 'Spotty'],
+                    'pattern' => 'Spotty'
+                ],
                 [
                     'name' => 'Borris',
                     'species' => 'shark',
@@ -24,7 +25,8 @@ class FunctionsTest extends TestCase
                     'length' => 7,
                     'aggression' => 2,
                     'color' => 'Blue',
-                    'pattern' => 'Spotty']
+                    'pattern' => 'Spotty'
+                ]
             ];
 
         $expectedResult =
