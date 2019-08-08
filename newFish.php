@@ -3,12 +3,12 @@ require_once 'php-files/functions.php';
 
 $db = databaseConnect();
 if (
-    isset($_POST['name']) &&
-    isset($_POST['species']) &&
-    isset($_POST['length']) &&
-    isset($_POST['aggression']) &&
-    isset($_POST['color']) &&
-    isset($_POST['pattern'])
+    isset($_POST['name'])
+    && isset($_POST['species'])
+    && isset($_POST['length'])
+    && isset($_POST['aggression'])
+    && isset($_POST['color'])
+    && isset($_POST['pattern'])
 ) {
     insertEntryIntoDB($db,$_POST);
 }

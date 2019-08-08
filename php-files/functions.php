@@ -64,7 +64,7 @@ function displayFish(array $fishFromDB):string
 /**
  * @param $dataBase
  * @param array $fishArray
- * Takes an array and inputs the data into the database.
+ * Takes an array and inserts the data into the database.
  */
 function insertEntryIntoDB($dataBase, array $fishArray)
 {
