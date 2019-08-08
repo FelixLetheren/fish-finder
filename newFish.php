@@ -23,7 +23,7 @@ if(isset($_POST['name'])){
     <form method="post" action="newFish.php">
         <input type="text" placeholder="Name" name="name" required>
         <input type="text" placeholder="Species" name="species" required>
-        <input type="text" placeholder="Length" name="length" required>
+        <input type="number" placeholder="Length" name="length" required>
         Aggression:
         <select name="aggression" required>
             <option label="Please select"></option>
