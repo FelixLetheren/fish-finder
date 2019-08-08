@@ -47,7 +47,7 @@ function displayFish(array $fishFromDB): string{
                 . $fish['length']
                 . 'cm</h3><h3 class="stat"> Aggression: '
                 . $fish['aggression']
-                . '</h3><h3 class="stat"> Colour: '
+                . '/5</h3><h3 class="stat"> Colour: '
                 . $fish['color']
                 . '</h3><h3 class="stat"> Pattern: '
                 . $fish['pattern']
@@ -69,7 +69,7 @@ function insertEntryIntoDB($dataBase, array $fishArray): bool{
     if (
         strlen($fishArray['name']) < 16
         && strlen($fishArray['species'] < 16)
-        && $fishArray['length'] < 9999999999999999
+        && $fishArray['length'] < 300
         && strlen($fishArray['color'] < 16)
         && strlen($fishArray['pattern'] < 16))
     {

@@ -31,7 +31,7 @@ if (
     <form method="post" action="newFish.php">
         <input class="field" type="text" placeholder="Name" name="name" required>
         <input class="field" type="text" placeholder="Species" name="species" required>
-        <input class="field" type="number" placeholder="Length(cm)" name="length" required>
+        <input class="field" type="number" placeholder="Length(cm) Max-300cm" name="length" required>
         <label for="aggression">Aggression:</label>
         <select class="field" id="aggression" name="aggression" required>
             <option label="Please select"></option>
