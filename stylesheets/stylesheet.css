@@ -13,6 +13,7 @@ h1 {
     font-size: 4rem;
     color: #5BC0BE;
     text-align: center;
+    margin-top: 20px;
 }
 
 h2 {
@@ -62,6 +63,23 @@ p {
     width: 100px;
     height: 100px;
     border-radius: 50%;
+}
+
+.form-container {
+    flex-flow: nowrap column;
+    align-items: center;
+}
+
+.field {
+    width: 200px;
+    height: 30px;
+    font-size: 1rem;
+    display: block;
+    margin: 5px 0;
+    border-radius: 10px;
+    border: 2px solid #5BC0BE;
+    background-color: #0B132B;
+    color: #5BC0BE;
 }
 
 .success {
