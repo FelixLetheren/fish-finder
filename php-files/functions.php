@@ -60,3 +60,20 @@ function displayFish(array $fishFromDB):string
     }
     return $result;
 }
+
+/**
+ * @param $dataBase
+ * @param array $fishArray
+ * Takes an array and inserts the data into the database.
+ */
+function insertEntryIntoDB($dataBase, array $fishArray)
+{
+    $sql = $dataBase->prepare('INSERT INTO `fish`(`name`,`species`,`length`,`aggression`,`color`,`pattern`) VALUES (:inputName,:inputSpecies,:inputLength,:inputAggression,:inputColor,:inputPattern);');
+    $sql->bindParam('inputName', $fishArray['name'], PDO::PARAM_STR);
+    $sql->bindParam('inputSpecies', $fishArray['species'], PDO::PARAM_STR);
+    $sql->bindParam('inputLength', $fishArray['length'], PDO::PARAM_INT);
+    $sql->bindParam('inputAggression', $fishArray['aggression'], PDO::PARAM_INT);
+    $sql->bindParam('inputColor', $fishArray['color'], PDO::PARAM_STR);
+    $sql->bindParam('inputPattern', $fishArray['pattern'], PDO::PARAM_STR);
+    $sql->execute();
+}
