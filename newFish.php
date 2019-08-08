@@ -31,8 +31,8 @@ if (
         <input class="field" type="text" placeholder="Name" name="name" required>
         <input class="field" type="text" placeholder="Species" name="species" required>
         <input class="field" type="number" placeholder="Length(cm)" name="length" required>
-        <h3>Aggression:</h3>
-        <select class="field" name="aggression" required>
+        <label for="aggression">Aggression:</label>
+        <select class="field" id="aggression" name="aggression" required>
             <option label="Please select"></option>
             <option value="1">1</option>
             <option value="2">2</option>

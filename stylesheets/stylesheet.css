@@ -81,7 +81,9 @@ p {
     background-color: #0B132B;
     color: #5BC0BE;
 }
-
+label{
+    font-size: 1.3rem;
+}
 .success {
     color: #18912c;
 }
