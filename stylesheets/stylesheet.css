@@ -87,7 +87,6 @@ p {
 @media only screen and (max-width: 330px) {
     .fish-card {
         width: 230px;
-        padding: 0;
     }
 
     .content-container {
@@ -97,6 +96,6 @@ p {
     .fish-picture {
         width: 200px;
         height: 100px;
-        margin-left: 14px;
+        margin-left: 4px;
     }
 }
