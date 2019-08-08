@@ -1,4 +1,5 @@
 <?php
+
 require '../php-files/functions.php';
 
 use PHPUnit\Framework\TestCase;
