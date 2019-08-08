@@ -1,5 +1,10 @@
 <?php
-require_once 'php-files/functions.php'
+require_once 'php-files/functions.php';
+
+$db = databaseConnect();
+if(isset($_POST['name'])){
+    insertEntryIntoDB($db,$_POST);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,6 +33,7 @@ require_once 'php-files/functions.php'
             <option value="4">4</option>
             <option value="5">5</option>
         </select>
+        <input type="text" placeholder="Color" name="color" required>
         <input type="text" placeholder="Pattern" name="pattern" required>
         <input type="submit" value="Submit">
     </form>
