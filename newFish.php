@@ -56,7 +56,8 @@ if (
         || isset($_POST['length'])
         || isset($_POST['aggression'])
         || isset($_POST['color'])
-        || isset($_POST['pattern'])) echo $message;?>
+        || isset($_POST['pattern']))
+    { echo $message;}?>
 </div>
 </body>
 </html>

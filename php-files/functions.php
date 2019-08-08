@@ -65,8 +65,12 @@ function displayFish(array $fishFromDB): string{
  * @return bool
  * Takes an array and inserts the data into the database
  */
-function insertEntryIntoDB($dataBase, array $fishArray): bool{
-    $sql = $dataBase->prepare('INSERT INTO `fish`(`name`,`species`,`length`,`aggression`,`color`,`pattern`) VALUES (:inputName,:inputSpecies,:inputLength,:inputAggression,:inputColor,:inputPattern);');
+function insertEntryIntoDB($dataBase, array $fishArray): bool
+{
+    if (
+        strlen($fishArray['name']) < 20
+        && strlen($fishArray['species'] < 30)){
+        $sql = $dataBase->prepare('INSERT INTO `fish`(`name`,`species`,`length`,`aggression`,`color`,`pattern`) VALUES (:inputName,:inputSpecies,:inputLength,:inputAggression,:inputColor,:inputPattern);');
     $sql->bindParam('inputName', $fishArray['name'], PDO::PARAM_STR);
     $sql->bindParam('inputSpecies', $fishArray['species'], PDO::PARAM_STR);
     $sql->bindParam('inputLength', $fishArray['length'], PDO::PARAM_INT);
@@ -75,6 +79,10 @@ function insertEntryIntoDB($dataBase, array $fishArray): bool{
     $sql->bindParam('inputPattern', $fishArray['pattern'], PDO::PARAM_STR);
     $sql->execute();
     return true;
+}
+else{
+    return false;
+}
 }
 
 /**
