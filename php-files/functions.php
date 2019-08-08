@@ -29,7 +29,7 @@ function getFish($db): array
  * Iterates through each associated array and concatenates all the information into one large string
  * of HTML
  */
-function displayFish(array $fishFromDB):string
+function displayFish(array $fishFromDB): string
 {
     $result = '';
     foreach ($fishFromDB as $fish) {
@@ -56,7 +56,8 @@ function displayFish(array $fishFromDB):string
                 . $fish['pattern']
                 . '</h3></div>';
         } else {
-            return 'Error! Please contact administrator';}
+            return 'Error! Please contact administrator';
+        }
     }
     return $result;
 }
@@ -64,9 +65,10 @@ function displayFish(array $fishFromDB):string
 /**
  * @param $dataBase
  * @param array $fishArray
- * Takes an array and inserts the data into the database.
+ * @return bool
+ * Takes an array and inserts the data into the database
  */
-function insertEntryIntoDB($dataBase, array $fishArray)
+function insertEntryIntoDB($dataBase, array $fishArray): bool
 {
     $sql = $dataBase->prepare('INSERT INTO `fish`(`name`,`species`,`length`,`aggression`,`color`,`pattern`) VALUES (:inputName,:inputSpecies,:inputLength,:inputAggression,:inputColor,:inputPattern);');
     $sql->bindParam('inputName', $fishArray['name'], PDO::PARAM_STR);
@@ -76,4 +78,19 @@ function insertEntryIntoDB($dataBase, array $fishArray)
     $sql->bindParam('inputColor', $fishArray['color'], PDO::PARAM_STR);
     $sql->bindParam('inputPattern', $fishArray['pattern'], PDO::PARAM_STR);
     $sql->execute();
+    return true;
+}
+
+/**
+ * @param bool $dataEntryResult
+ * @return string
+ * Takes a boolean and returns 2 different response message strings if true or false
+ */
+function inputConfirmation(bool $dataEntryResult): string
+{
+    if ($dataEntryResult) {
+        return '<h2 class="success">Success! Fish has been inserted into collection</h2>';
+    } else {
+        return '<h2 class="failure">Oops! You\'ve made and error. Please check you\`ve correctly filled all fields!</h2>';
+    }
 }
