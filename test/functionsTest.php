@@ -35,7 +35,7 @@ class FunctionsTest extends TestCase
         $this->assertEquals(displayFish($exampleFish), $expectedResult);
     }
 
-    public function testDisplayFish_errorsWithUnsetRequiredFields()
+    public function testDisplayFish_errorsWithUnsetName()
     {
         $exampleFish =
             [
