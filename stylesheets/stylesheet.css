@@ -91,7 +91,9 @@ label{
 .failure {
     color: #900b0b;
 }
-
+.entry-info{
+    text-align: center;
+}
 @media only screen and (max-width: 1110px) {
     .content-container {
         width: 730px;

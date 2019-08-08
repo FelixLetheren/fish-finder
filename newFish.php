@@ -25,6 +25,7 @@ if (
 <body>
 <div class="title-container">
     <h1>Add a new fish</h1>
+    <h3 class="entry-info">Maximum 15 characters per field.</h3>
 </div>
 <div class="content-container form-container">
     <form method="post" action="newFish.php">

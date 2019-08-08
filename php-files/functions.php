@@ -65,24 +65,26 @@ function displayFish(array $fishFromDB): string{
  * @return bool
  * Takes an array and inserts the data into the database
  */
-function insertEntryIntoDB($dataBase, array $fishArray): bool
-{
+function insertEntryIntoDB($dataBase, array $fishArray): bool{
     if (
-        strlen($fishArray['name']) < 20
-        && strlen($fishArray['species'] < 30)){
+        strlen($fishArray['name']) < 16
+        && strlen($fishArray['species'] < 16)
+        && $fishArray['length'] < 9999999999999999
+        && strlen($fishArray['color'] < 16)
+        && strlen($fishArray['pattern'] < 16))
+    {
         $sql = $dataBase->prepare('INSERT INTO `fish`(`name`,`species`,`length`,`aggression`,`color`,`pattern`) VALUES (:inputName,:inputSpecies,:inputLength,:inputAggression,:inputColor,:inputPattern);');
-    $sql->bindParam('inputName', $fishArray['name'], PDO::PARAM_STR);
-    $sql->bindParam('inputSpecies', $fishArray['species'], PDO::PARAM_STR);
-    $sql->bindParam('inputLength', $fishArray['length'], PDO::PARAM_INT);
-    $sql->bindParam('inputAggression', $fishArray['aggression'], PDO::PARAM_INT);
-    $sql->bindParam('inputColor', $fishArray['color'], PDO::PARAM_STR);
-    $sql->bindParam('inputPattern', $fishArray['pattern'], PDO::PARAM_STR);
-    $sql->execute();
-    return true;
-}
-else{
-    return false;
-}
+        $sql->bindParam('inputName', $fishArray['name'], PDO::PARAM_STR);
+        $sql->bindParam('inputSpecies', $fishArray['species'], PDO::PARAM_STR);
+        $sql->bindParam('inputLength', $fishArray['length'], PDO::PARAM_INT);
+        $sql->bindParam('inputAggression', $fishArray['aggression'], PDO::PARAM_INT);
+        $sql->bindParam('inputColor', $fishArray['color'], PDO::PARAM_STR);
+        $sql->bindParam('inputPattern', $fishArray['pattern'], PDO::PARAM_STR);
+        $sql->execute();
+        return true;
+    } else {
+        return false;
+    }
 }
 
 /**

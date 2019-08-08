@@ -7,7 +7,7 @@
 #
 # Host: 192.168.20.20 (MySQL 5.6.44)
 # Database: fish-finder
-# Generation Time: 2019-08-08 15:30:10 +0000
+# Generation Time: 2019-08-08 20:23:43 +0000
 # ************************************************************
 
 
@@ -30,7 +30,7 @@ CREATE TABLE `fish` (
   `name` varchar(255) NOT NULL DEFAULT '',
   `species` varchar(255) NOT NULL DEFAULT '',
   `img-filepath` varchar(255) DEFAULT 'images/placeholder.png',
-  `length` int(11) unsigned NOT NULL,
+  `length` bigint(11) unsigned NOT NULL,
   `aggression` enum('1','2','3','4','5') NOT NULL DEFAULT '1',
   `color` varchar(255) NOT NULL DEFAULT '',
   `pattern` varchar(255) DEFAULT 'none',
