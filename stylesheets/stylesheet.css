@@ -1,0 +1,103 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 62.5%;
+    background-color: #0B132B;
+    font-family: 'Raleway', sans-serif;
+    color: #5BC0BE;
+}
+
+h1 {
+    font-size: 4rem;
+    color: #5BC0BE;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+p {
+    font-size: 2rem;
+}
+
+.title-container {
+    margin: 0 auto;
+}
+
+.fish-picture {
+    width: 300px;
+    height: 150px;
+}
+
+.fish-card {
+    border: 1px solid #5BC0BE;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 20px;
+    width: 324px;
+}
+
+.content-container {
+    width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+@media only screen and (max-width: 1110px) {
+    .content-container {
+        width: 730px;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .content-container {
+        width: 365px;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .title-container {
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 370px) {
+    .fish-card {
+        width: 290px;
+    }
+
+    .content-container {
+        width: 329px;
+    }
+
+    .fish-picture {
+        width: 250px;
+        height: 120px;
+        margin-left: 8px;
+    }
+}
+
+@media only screen and (max-width: 330px) {
+    .fish-card {
+        width: 230px;
+    }
+
+    .content-container {
+        width: 270px;
+    }
+
+    .fish-picture {
+        width: 200px;
+        height: 100px;
+        margin-left: 4px;
+    }
+}
