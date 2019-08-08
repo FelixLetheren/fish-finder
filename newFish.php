@@ -51,7 +51,7 @@ if (
     </a>
 </div>
 <div class="content-container">
-    <?php echo $message;?>
+    <?php if(isset($_POST)) echo $message;?>
 </div>
 </body>
 </html>
