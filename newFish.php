@@ -51,7 +51,12 @@ if (
     </a>
 </div>
 <div class="content-container">
-    <?php if(isset($_POST)) echo $message;?>
+    <?php if(isset($_POST['name'])
+        || isset($_POST['species'])
+        || isset($_POST['length'])
+        || isset($_POST['aggression'])
+        || isset($_POST['color'])
+        || isset($_POST['pattern'])) echo $message;?>
 </div>
 </body>
 </html>
