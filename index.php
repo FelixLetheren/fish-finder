@@ -18,7 +18,7 @@ $fishDataHtml = displayFish($collection);
 <div class="title-container">
     <h1>Fish Finder</h1>
 </div>
-<div class="container">
+<div class="content-container">
     <?php echo $fishDataHtml; ?>
 </div>
 </body>

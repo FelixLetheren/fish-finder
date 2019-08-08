@@ -45,19 +45,19 @@ p {
     float: left;
 }
 
-.container {
+.content-container {
     width: 1100px;
     margin: 0 auto;
 }
 
 @media only screen and (max-width: 1110px) {
-    .container {
+    .content-container {
         width: 730px;
     }
 }
 
 @media only screen and (max-width: 750px) {
-    .container {
+    .content-container {
         width: 365px;
     }
 }
@@ -73,7 +73,7 @@ p {
         width: 290px;
     }
 
-    .container {
+    .content-container {
         width: 329px;
     }
 
@@ -90,7 +90,7 @@ p {
         padding: 0;
     }
 
-    .container {
+    .content-container {
         width: 270px;
     }
 
