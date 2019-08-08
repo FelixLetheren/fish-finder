@@ -23,7 +23,7 @@ $fishDataHtml = displayFish($collection);
 </div>
 <div class="link-container">
     <a class="new-fish-icon" href="newFish.php">
-        <img src="images/plus-icon.png" alt="Add a new fish"
+        <img src="images/plus-icon.png" alt="Add a new fish">
     </a>
 </div>
 </body>
