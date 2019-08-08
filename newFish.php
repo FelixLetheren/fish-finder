@@ -26,12 +26,12 @@ if (
 <div class="title-container">
     <h1>Add a new fish</h1>
 </div>
-<div class="content-container">
+<div class="content-container form-container">
     <form method="post" action="newFish.php">
         <input type="text" placeholder="Name" name="name" required>
         <input type="text" placeholder="Species" name="species" required>
         <input type="number" placeholder="Length(cm)" name="length" required>
-        Aggression:
+        <h2>Aggression:</h2>
         <select name="aggression" required>
             <option label="Please select"></option>
             <option value="1">1</option>
