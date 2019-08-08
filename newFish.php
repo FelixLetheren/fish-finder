@@ -28,11 +28,11 @@ if (
 </div>
 <div class="content-container form-container">
     <form method="post" action="newFish.php">
-        <input type="text" placeholder="Name" name="name" required>
-        <input type="text" placeholder="Species" name="species" required>
-        <input type="number" placeholder="Length(cm)" name="length" required>
+        <input class="field" type="text" placeholder="Name" name="name" required>
+        <input class="field" type="text" placeholder="Species" name="species" required>
+        <input class="field" type="number" placeholder="Length(cm)" name="length" required>
         <h3>Aggression:</h3>
-        <select name="aggression" required>
+        <select class="field" name="aggression" required>
             <option label="Please select"></option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -40,9 +40,9 @@ if (
             <option value="4">4</option>
             <option value="5">5</option>
         </select>
-        <input type="text" placeholder="Color" name="color" required>
-        <input type="text" placeholder="Pattern" name="pattern" required>
-        <input type="submit" value="Submit">
+        <input class="field" type="text" placeholder="Color" name="color" required>
+        <input class="field" type="text" placeholder="Pattern" name="pattern" required>
+        <input class="field" type="submit" value="Submit">
     </form>
 </div>
 <div class="link-container">
