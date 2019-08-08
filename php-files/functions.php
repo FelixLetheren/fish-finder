@@ -3,8 +3,7 @@
  * @return PDO
  * Connects to database
  */
-function databaseConnect()
-{
+function databaseConnect(){
     $db = new PDO('mysql:host=192.168.20.20; dbname=fish-finder', 'root', '');
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     return $db;
@@ -15,8 +14,7 @@ function databaseConnect()
  * @return array
  * Queries the database to get multidimensional array of all data required to display.
  */
-function getFish($db): array
-{
+function getFish($db): array{
     $sql = $db->prepare('SELECT `fish`.`name`,`fish`.`species`,`fish`.`img-filepath`,`fish`.`length`,`fish`.`aggression`,`fish`.`color`,`fish`.`pattern` FROM `fish`;');
     $sql->execute();
     $collection = $sql->fetchAll();
@@ -29,8 +27,7 @@ function getFish($db): array
  * Iterates through each associated array and concatenates all the information into one large string
  * of HTML
  */
-function displayFish(array $fishFromDB): string
-{
+function displayFish(array $fishFromDB): string{
     $result = '';
     foreach ($fishFromDB as $fish) {
         if (isset($fish['name'])
@@ -68,8 +65,7 @@ function displayFish(array $fishFromDB): string
  * @return bool
  * Takes an array and inserts the data into the database
  */
-function insertEntryIntoDB($dataBase, array $fishArray): bool
-{
+function insertEntryIntoDB($dataBase, array $fishArray): bool{
     $sql = $dataBase->prepare('INSERT INTO `fish`(`name`,`species`,`length`,`aggression`,`color`,`pattern`) VALUES (:inputName,:inputSpecies,:inputLength,:inputAggression,:inputColor,:inputPattern);');
     $sql->bindParam('inputName', $fishArray['name'], PDO::PARAM_STR);
     $sql->bindParam('inputSpecies', $fishArray['species'], PDO::PARAM_STR);
@@ -86,8 +82,7 @@ function insertEntryIntoDB($dataBase, array $fishArray): bool
  * @return string
  * Takes a boolean and returns 2 different response message strings if true or false
  */
-function inputConfirmation(bool $dataEntryResult): string
-{
+function inputConfirmation(bool $dataEntryResult): string{
     if ($dataEntryResult) {
         return '<h2 class="success">Success! Fish has been inserted into collection</h2>';
     } else {
