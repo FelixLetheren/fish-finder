@@ -10,7 +10,7 @@ if (
     && isset($_POST['color'])
     && isset($_POST['pattern'])
 ) {
-    insertEntryIntoDB($db,$_POST);
+   echo inputConfirmation(insertEntryIntoDB($db,$_POST));
 }
 ?>
 <!DOCTYPE html>

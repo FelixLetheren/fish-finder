@@ -26,5 +26,6 @@ $fishDataHtml = displayFish($collection);
         <img src="images/plus-icon.png" alt="Add a new fish">
     </a>
 </div>
+
 </body>
 </html>

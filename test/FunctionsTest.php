@@ -31,8 +31,7 @@ class FunctionsTest extends TestCase
             ];
 
         $expectedResult =
-            '<div class="fish-card"><h2 class="name">Borris</h2><h3 class="stat">shark</h3><img alt="fish picture" class="fish-picture" src="images/borris.png"><h3 class="stat"> Length-  7cm</h3><h3 class="stat"> Aggression- 2</h3><h3 class="stat"> Colour- Blue</h3><h3 class="stat"> Pattern- Spotty</h3></div><div class="fish-card"><h2 class="name">Borris</h2><h3 class="stat">shark</h3><img alt="fish picture" class="fish-picture" src="images/borris.png"><h3 class="stat"> Length-  7cm</h3><h3 class="stat"> Aggression- 2</h3><h3 class="stat"> Colour- Blue</h3><h3 class="stat"> Pattern- Spotty</h3></div>';
-
+            '<div class="fish-card"><h2 class="name">Borris</h2><h3 class="stat">shark</h3><img alt="fish picture" class="fish-picture" src="images/borris.png"><h3 class="stat"> Length:  7cm</h3><h3 class="stat"> Aggression: 2</h3><h3 class="stat"> Colour: Blue</h3><h3 class="stat"> Pattern: Spotty</h3></div><div class="fish-card"><h2 class="name">Borris</h2><h3 class="stat">shark</h3><img alt="fish picture" class="fish-picture" src="images/borris.png"><h3 class="stat"> Length:  7cm</h3><h3 class="stat"> Aggression: 2</h3><h3 class="stat"> Colour: Blue</h3><h3 class="stat"> Pattern: Spotty</h3></div>';
         $this->assertEquals(displayFish($exampleFish), $expectedResult);
     }
 
@@ -68,5 +67,24 @@ class FunctionsTest extends TestCase
         $this->expectException(TypeError::class);
 
         displayFish($examplefish);
+    }
+
+    public function testInputConfirmation_returnsSuccessMessageOnTrue(){
+
+        $expectedresult = '<h2 class="success">Success! Fish has been inserted into collection</h2>';
+
+        $result = inputConfirmation(true);
+
+        $this->assertEquals($expectedresult, $result);
+
+    }
+    public function testInputConfirmation_returnsFailureMessageOnFalse(){
+
+        $expectedresult = '<h2 class="failure">Oops! You\'ve made and error. Please check you\`ve correctly filled all fields!</h2>';
+
+        $result = inputConfirmation(false);
+
+        $this->assertEquals($expectedresult, $result);
+
     }
 }
