@@ -19,6 +19,7 @@ require_once 'php-files/functions.php'
     <input type="text" placeholder="Name" name="name" required>
     <input type="text" placeholder="Species" name="species" required>
     <input type="text" placeholder="Length" name="length" required>
+    Aggression:
     <select name="aggression" required>
         <option value="1">1</option>
         <option value="2">2</option>
