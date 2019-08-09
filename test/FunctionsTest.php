@@ -82,7 +82,7 @@ class FunctionsTest extends TestCase
     public function testInputConfirmation_returnsFailureMessageOnFalse()
     {
 
-        $expectedResult = '<h2 class="failure">Oops! You\'ve made and error. Please check you\`ve correctly filled all fields!</h2>';
+        $expectedResult = '<h2 class="failure">Oops! You\'ve made and error. Please check you\'ve correctly filled all fields!</h2>';
 
         $result = inputConfirmation(false);
 
