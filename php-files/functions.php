@@ -70,6 +70,7 @@ function insertEntryIntoDB($dataBase, array $fishArray): bool{
         strlen($fishArray['name']) < 16
         && strlen($fishArray['species'] < 16)
         && $fishArray['length'] < 300
+        && $fishArray['length'] > 0
         && strlen($fishArray['color'] < 16)
         && strlen($fishArray['pattern'] < 16))
     {
