@@ -21,5 +21,10 @@ $fishDataHtml = displayFish($collection);
 <div class="content-container">
     <?php echo $fishDataHtml; ?>
 </div>
+<div class="link-container">
+    <a class="new-fish-icon" href="newFish.php">
+        <img src="images/plus-icon.png" alt="Add a new fish">
+    </a>
+</div>
 </body>
 </html>

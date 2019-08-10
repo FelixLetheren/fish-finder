@@ -31,8 +31,7 @@ class FunctionsTest extends TestCase
             ];
 
         $expectedResult =
-            '<div class="fish-card"><h2 class="name">Borris</h2><h3 class="stat">shark</h3><img alt="fish picture" class="fish-picture" src="images/borris.png"><h3 class="stat"> Length-  7cm</h3><h3 class="stat"> Aggression- 2</h3><h3 class="stat"> Colour- Blue</h3><h3 class="stat"> Pattern- Spotty</h3></div><div class="fish-card"><h2 class="name">Borris</h2><h3 class="stat">shark</h3><img alt="fish picture" class="fish-picture" src="images/borris.png"><h3 class="stat"> Length-  7cm</h3><h3 class="stat"> Aggression- 2</h3><h3 class="stat"> Colour- Blue</h3><h3 class="stat"> Pattern- Spotty</h3></div>';
-
+            '<div class="fish-card"><h2 class="name">Borris</h2><h3 class="stat">shark</h3><img alt="fish picture" class="fish-picture" src="images/borris.png"><h3 class="stat"> Length:  7cm</h3><h3 class="stat"> Aggression: 2/5</h3><h3 class="stat"> Colour: Blue</h3><h3 class="stat"> Pattern: Spotty</h3></div><div class="fish-card"><h2 class="name">Borris</h2><h3 class="stat">shark</h3><img alt="fish picture" class="fish-picture" src="images/borris.png"><h3 class="stat"> Length:  7cm</h3><h3 class="stat"> Aggression: 2/5</h3><h3 class="stat"> Colour: Blue</h3><h3 class="stat"> Pattern: Spotty</h3></div>';
         $this->assertEquals(displayFish($exampleFish), $expectedResult);
     }
 
@@ -62,11 +61,40 @@ class FunctionsTest extends TestCase
         $this->assertEquals($expectedResult, displayFish($exampleFish));
     }
 
-    public function testDisplayFish_throwsTypeErrorWithWrongInputType(){
-        $examplefish = 23;
+    public function testDisplayFish_throwsTypeErrorWithWrongInputType()
+    {
+        $exampleFish = 23;
 
         $this->expectException(TypeError::class);
 
-        displayFish($examplefish);
+        displayFish($exampleFish);
+    }
+
+    public function testInputConfirmation_returnsSuccessMessageOnTrue()
+    {
+
+        $expectedResult = '<h2 class="success">Success! Fish has been inserted into collection</h2>';
+
+        $result = inputConfirmation(true);
+
+        $this->assertEquals($expectedResult, $result);
+    }
+    public function testInputConfirmation_returnsFailureMessageOnFalse()
+    {
+
+        $expectedResult = '<h2 class="failure">Oops! You\'ve made and error. Please check you\'ve correctly filled all fields!</h2>';
+
+        $result = inputConfirmation(false);
+
+        $this->assertEquals($expectedResult, $result);
+    }
+    public function testInputConfirmation_throwsTypeErrorWithWrongInputType()
+    {
+
+        $exampleData = 23;
+
+        $this->expectException(TypeError::class);
+
+        displayFish($exampleData);
     }
 }
